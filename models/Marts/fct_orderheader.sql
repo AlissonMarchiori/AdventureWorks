@@ -35,7 +35,7 @@ with orderdetail as(
     from {{ref('dim_vendedor')}}
 )
 
-, orderheader as 
+, orderheader as (
 
     select
         adress.adress_sk
