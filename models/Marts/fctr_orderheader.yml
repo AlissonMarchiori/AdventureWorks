@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_orderheader
+    columns:
+      - name: salesorderid
+        description: The primary key of the order
+
+      - name: adress_sk
+        description: The foreign key to the employees dimension table
+
+      - name: customer_sk
+        description: The foreign key to the customer dimension table
+
+      - name: product_sk
+        description: The foreign key to the product dimension table
+
+      - name: reason_sk
+        description: The foreign key to the product dimension table        
+
+      - name: seller_sk
+        description: The foreign key to the product dimension table   

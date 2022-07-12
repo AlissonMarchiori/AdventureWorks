@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_adress
+    columns:
+      - name: adress_sk
+        description: Chave primaria da dimensão adress
+        tests:
+          - unique
+          - not_null

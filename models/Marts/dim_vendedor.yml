@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_vendedor
+    columns:
+      - name: seller_sk
+        description: Chave primaria da dimensão vendedor
+        tests:
+          - unique
+          - not_null
