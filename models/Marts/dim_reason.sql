@@ -16,11 +16,10 @@ with header as (
 
   select 
 
-   row_number() over (order by header.salesreasonid) as reason_sk
-
-  , header.salesorderid
-  , reason.reasontype
-  , reason.name_reason
+      row_number() over (order by header.salesreasonid) as reason_sk
+    , header.salesorderid
+    , reason.reasontype
+    , reason.name_reason
 
   from  header
    join reason on header.salesreasonid = reason.salesreasonid
