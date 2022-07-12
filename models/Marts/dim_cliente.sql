@@ -17,7 +17,6 @@ with customer as (
   select 
 
       row_number() over (order by customer.personid) as customer_sk
-      
     , customer.personid
     , customer.customerid
     , customer.storeid

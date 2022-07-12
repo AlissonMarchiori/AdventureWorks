@@ -21,20 +21,20 @@ with adress as(
 
 , fulladress as(
 
-  select
+   select
 
-   row_number() over (order by adress.addressid) as adress_sk
-   ,stateprovince.territoryid
-   ,adress.stateprovinceid
-   ,adress.addressid
-   ,adress.city
-   ,stateprovince.name_stateprovice
-   ,country.name_countryregion
-   ,country.countryregioncode
-   
-  from adress
-   left join stateprovince on adress.stateprovinceid = stateprovince.stateprovinceid
-      left join country on stateprovince.countryregioncode = country.countryregioncode  
+      row_number() over (order by adress.addressid) as adress_sk
+      ,stateprovince.territoryid
+      ,adress.stateprovinceid
+      ,adress.addressid
+      ,adress.city
+      ,stateprovince.name_stateprovice
+      ,country.name_countryregion
+      ,country.countryregioncode
+      
+   from adress
+      left join stateprovince on adress.stateprovinceid = stateprovince.stateprovinceid
+         left join country on stateprovince.countryregioncode = country.countryregioncode  
 )
 
 select  * FROM fulladress
