@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_reason
+    columns:
+      - name: reason_sk
+        description: Chave primaria da dimensão reason
+        tests:
+          - unique
+          - not_null
