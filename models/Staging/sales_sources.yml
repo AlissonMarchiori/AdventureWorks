@@ -1,0 +1,89 @@
+version: 2
+
+sources:
+  - name: sales
+    schema: Sales
+    description: Replica do banco de dados AdventureWorks Schema sales
+    tables:
+      - name: sales_salesorderheader
+        description: Cabeçalho de vendas 
+        columns:
+          - name: salesorderid
+            description: Chave primaria de sales header
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+            
+   ## sales cred card
+      - name: sales_credicard
+        description: Registro por cartão 
+        columns:
+          - name: creditcardid
+            description: Chave primaria de seles cred card
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+    ## Cliente
+      - name: sales_customer
+        description: Registro por cliente
+        columns:
+          - name: customerid
+            description: Chave primaria de cliente
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+    
+    ## Sales order detail
+      - name: sales_salesorderdetail
+        description: Registro por ordem de produto
+        columns:
+          - name: salesorderdetailid
+            description: Chave primaria de order detail
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+    
+    ## Sales person 
+      - name: sales_selesperson
+        description:  vendedor 
+        columns:
+          - name: businessentityid
+            description: Chave primaria de vendedor
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+    ## Rasão da venda
+      - name: sales_selesreason
+        description: Rasao da venda
+        columns:
+          - name: salesreasonid
+            description: Chave primaria de rasao da venda
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+      - name: sales_territory
+        description: armazena informações de locação da venda 
+        columns:
+          - name: territoryid
+            description: Chave primaria de rasao da venda
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+      - name: sales_selesreasonheader

@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: products
+    schema: Products
+    description: Replica do banco de dados AdventureWorks schema products
+    tables:
+      - name: production_product
+        description: Armazena informações de produtos 
+        columns:
+          - name: productid
+            description: Chave primaria de produtos
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time

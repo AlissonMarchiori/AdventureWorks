@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: employee
+    schema: Employee
+    description: Replica do banco de dados AdventureWorks schema employee
+    tables:
+      - name: humanresources_employee
+        description: humanresources
+        columns:
+          - name: businessentityid
+            description: chave primaria da tabela humanresources_employee
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+

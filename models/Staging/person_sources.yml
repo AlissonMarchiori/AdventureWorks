@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: person
+    schema: Person
+    description: Replica do banco de dados AdventureWorks schema person
+    tables:
+      - name: person_person
+        description: Armazena informações pessoais, pessoa cliente, pessoa vendedor etc
+        columns:
+          - name: businessentityid
+            description: Chave primaira de person
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+      - name: person_adress
+        description: Armazena informações de logradouro do cliente
+        columns:
+          - name: addressid
+            description: Chave primaira de person_adress
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+      - name: person_businessentity
+        description: One record person. Includes cancelled and deleted orders.
+        columns:
+          - name: businessentityid
+            description: Chave primaira de person_businessentity
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+      - name: person_contrryregion
+        description: Armazena informações de pais que é ligada com as informacoes de logradouro
+        columns:
+          - name: countryregioncode
+            description: Chave primaira de contrryregion
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+
+      - name: person_stateprovice
+        description: Armazena informações de estado que é ligada com as informacoes de pais
+
+      - name: person_businessentityaddress
+        description: Armazena informações de logradouro da empresa/venda
+
