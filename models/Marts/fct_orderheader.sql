@@ -40,8 +40,8 @@ with orderdetail as(
     select
         adress.adress_sk
         , cliente.customer_sk
-        , seller.seller_sk
         , orderdetail.product_sk
+        , seller.seller_sk
         , reason.reason_sk
         , card.cardtype
         , orderheader.salesorderid
